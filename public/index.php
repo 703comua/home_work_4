@@ -24,15 +24,17 @@
 
     require_once "Money.php";
 
-    $money1 = new Money(3600, new Currency('EUR'));
+    $amount1 = 3600;
+    $money1 = new Money($amount1, new Currency('EUR'));
     print_r($money1);
     try {
-        $money2 = new Money(3500, new Currency('USD'));
+        $amount2 = 3500;
+        $money2 = new Money($amount2, new Currency('USD'));
         print_r($money2);
-        if ($money1->equals($money2)){
-            echo 'Your money1 and money2 currencies are equal';
+        if ($money1->equals($money2) && $amount1 === $amount2){
+            echo 'Your money1 and money2 currencies and amounts are equal';
         } else {
-            throw new Exception('Your money1 and money2 currencies NOT equal');
+            throw new Exception('Your money1 and money2 currencies OR amounts are NOT equal');
         }
 
     } catch (Exception $exception){
