@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 //Название валюты передавать в формате ISO 4217 (USD, EUR, ...) через конструктор класса.
 //Для свойства isoCode написать гэттер и сеттер.
@@ -29,6 +30,6 @@ class Currency
 
     public function equals(self $currency): bool
     {
-        return (string)$this->isoCode === (string)$currency->getIsoCode();
+        return (string)$this->isoCode === (string)$currency->isoCode;
     }
 }

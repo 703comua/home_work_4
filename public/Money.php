@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 // Создать класс Money с приватным свойствами: amount (int|float) и currency (Currency).
 
@@ -42,16 +43,16 @@ class Money
 
     public function equals(self $money): bool
     {
-        var_dump($this->currency);
-        echo '<br>';
-        var_dump($money->currency);
-        echo '<br>';
+        //var_dump($this->currency);
+        //echo '<br>';
+        //var_dump($money->getCurrency());
+        //echo '<br>';
         return $this->currency->equals($money->getCurrency());
     }
 
-//    public function add(self $money): float
-//    {
-//        return $this->amount + $money->getAmount();
-//    }
+    public function add(self $money): float
+    {
+        return $this->amount + $money->getAmount();
+    }
 
 }
